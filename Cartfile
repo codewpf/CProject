@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" ~> 4.0
+github "SnapKit/SnapKit" ~> 3.0
+github "SVProgressHUD/SVProgressHUD"
+github "AFNetworking/AFNetworking" ~> 3.0

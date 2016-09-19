@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let vc:ViewController = ViewController()
+        self.window?.rootViewController = vc
+        
+        let dic:Dictionary = Bundle.main.infoDictionary!
+        let name:String = dic["CFBundleIdentifier"] as! String
+        print("123\(name)321\n\(dic)")
+        
+        
+        self.window?.backgroundColor = UIColor.white
+        self.window?.makeKeyAndVisible()
         return true
     }
 

@@ -14,6 +14,14 @@
 		E3C0846C1D8FF4230089EC43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C0846A1D8FF4230089EC43 /* LaunchScreen.storyboard */; };
 		E3C084771D8FF4230089EC43 /* CProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084761D8FF4230089EC43 /* CProjectTests.swift */; };
 		E3C084821D8FF4230089EC43 /* CProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084811D8FF4230089EC43 /* CProjectUITests.swift */; };
+		E3C084941D8FF5090089EC43 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C084901D8FF5090089EC43 /* AFNetworking.framework */; };
+		E3C084951D8FF5090089EC43 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C084911D8FF5090089EC43 /* Alamofire.framework */; };
+		E3C084961D8FF5090089EC43 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C084921D8FF5090089EC43 /* SnapKit.framework */; };
+		E3C084971D8FF5090089EC43 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C084931D8FF5090089EC43 /* SVProgressHUD.framework */; };
+		E3C0849E1D8FF5E70089EC43 /* AFNetworking.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849A1D8FF5E70089EC43 /* AFNetworking.framework.dSYM */; };
+		E3C0849F1D8FF5E70089EC43 /* Alamofire.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849B1D8FF5E70089EC43 /* Alamofire.framework.dSYM */; };
+		E3C084A01D8FF5E70089EC43 /* SnapKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849C1D8FF5E70089EC43 /* SnapKit.framework.dSYM */; };
+		E3C084A11D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +41,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E3C084991D8FF5B50089EC43 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				E3C0849E1D8FF5E70089EC43 /* AFNetworking.framework.dSYM in CopyFiles */,
+				E3C0849F1D8FF5E70089EC43 /* Alamofire.framework.dSYM in CopyFiles */,
+				E3C084A01D8FF5E70089EC43 /* SnapKit.framework.dSYM in CopyFiles */,
+				E3C084A11D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E3C0845E1D8FF4230089EC43 /* CProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C084611D8FF4230089EC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +71,14 @@
 		E3C0847D1D8FF4230089EC43 /* CProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C084811D8FF4230089EC43 /* CProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CProjectUITests.swift; sourceTree = "<group>"; };
 		E3C084831D8FF4230089EC43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C084901D8FF5090089EC43 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		E3C084911D8FF5090089EC43 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		E3C084921D8FF5090089EC43 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		E3C084931D8FF5090089EC43 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		E3C0849A1D8FF5E70089EC43 /* AFNetworking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = AFNetworking.framework.dSYM; path = ../../Carthage/Build/iOS/AFNetworking.framework.dSYM; sourceTree = "<group>"; };
+		E3C0849B1D8FF5E70089EC43 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = ../../Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		E3C0849C1D8FF5E70089EC43 /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = ../../Carthage/Build/iOS/SnapKit.framework.dSYM; sourceTree = "<group>"; };
+		E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SVProgressHUD.framework.dSYM; path = ../../Carthage/Build/iOS/SVProgressHUD.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C084941D8FF5090089EC43 /* AFNetworking.framework in Frameworks */,
+				E3C084951D8FF5090089EC43 /* Alamofire.framework in Frameworks */,
+				E3C084961D8FF5090089EC43 /* SnapKit.framework in Frameworks */,
+				E3C084971D8FF5090089EC43 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +113,12 @@
 		E3C084551D8FF4230089EC43 = {
 			isa = PBXGroup;
 			children = (
+				E3C084A31D9033470089EC43 /* Tools */,
 				E3C084601D8FF4230089EC43 /* CProject */,
 				E3C084751D8FF4230089EC43 /* CProjectTests */,
 				E3C084801D8FF4230089EC43 /* CProjectUITests */,
 				E3C0845F1D8FF4230089EC43 /* Products */,
+				E3C0848F1D8FF5090089EC43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +137,11 @@
 			children = (
 				E3C084611D8FF4230089EC43 /* AppDelegate.swift */,
 				E3C084631D8FF4230089EC43 /* ViewController.swift */,
-				E3C084651D8FF4230089EC43 /* Main.storyboard */,
 				E3C084681D8FF4230089EC43 /* Assets.xcassets */,
-				E3C0846A1D8FF4230089EC43 /* LaunchScreen.storyboard */,
 				E3C0846D1D8FF4230089EC43 /* Info.plist */,
+				E3C084A21D8FF63D0089EC43 /* dSYM */,
+				E3C084651D8FF4230089EC43 /* Main.storyboard */,
+				E3C0846A1D8FF4230089EC43 /* LaunchScreen.storyboard */,
 			);
 			path = CProject;
 			sourceTree = "<group>";
@@ -125,6 +164,35 @@
 			path = CProjectUITests;
 			sourceTree = "<group>";
 		};
+		E3C0848F1D8FF5090089EC43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3C084901D8FF5090089EC43 /* AFNetworking.framework */,
+				E3C084911D8FF5090089EC43 /* Alamofire.framework */,
+				E3C084921D8FF5090089EC43 /* SnapKit.framework */,
+				E3C084931D8FF5090089EC43 /* SVProgressHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3C084A21D8FF63D0089EC43 /* dSYM */ = {
+			isa = PBXGroup;
+			children = (
+				E3C0849A1D8FF5E70089EC43 /* AFNetworking.framework.dSYM */,
+				E3C0849B1D8FF5E70089EC43 /* Alamofire.framework.dSYM */,
+				E3C0849C1D8FF5E70089EC43 /* SnapKit.framework.dSYM */,
+				E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */,
+			);
+			path = dSYM;
+			sourceTree = "<group>";
+		};
+		E3C084A31D9033470089EC43 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +203,8 @@
 				E3C0845A1D8FF4230089EC43 /* Sources */,
 				E3C0845B1D8FF4230089EC43 /* Frameworks */,
 				E3C0845C1D8FF4230089EC43 /* Resources */,
+				E3C084981D8FF50C0089EC43 /* ShellScript */,
+				E3C084991D8FF5B50089EC43 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -193,6 +263,7 @@
 				TargetAttributes = {
 					E3C0845D1D8FF4230089EC43 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9GUW4K86M5;
 						ProvisioningStyle = Automatic;
 					};
 					E3C084711D8FF4230089EC43 = {
@@ -253,6 +324,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3C084981D8FF50C0089EC43 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/AFNetworking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3C0845A1D8FF4230089EC43 /* Sources */ = {
@@ -412,6 +503,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9GUW4K86M5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
@@ -424,6 +520,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9GUW4K86M5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
