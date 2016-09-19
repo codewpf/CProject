@@ -22,6 +22,8 @@
 		E3C0849F1D8FF5E70089EC43 /* Alamofire.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849B1D8FF5E70089EC43 /* Alamofire.framework.dSYM */; };
 		E3C084A01D8FF5E70089EC43 /* SnapKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849C1D8FF5E70089EC43 /* SnapKit.framework.dSYM */; };
 		E3C084A11D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */; };
+		E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */; };
+		E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084A61D903AC00089EC43 /* PDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		E3C0849B1D8FF5E70089EC43 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = ../../Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
 		E3C0849C1D8FF5E70089EC43 /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = ../../Carthage/Build/iOS/SnapKit.framework.dSYM; sourceTree = "<group>"; };
 		E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SVProgressHUD.framework.dSYM; path = ../../Carthage/Build/iOS/SVProgressHUD.framework.dSYM; sourceTree = "<group>"; };
+		E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFKeychain.swift; sourceTree = "<group>"; };
+		E3C084A61D903AC00089EC43 /* PDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,8 @@
 		E3C084A31D9033470089EC43 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */,
+				E3C084A61D903AC00089EC43 /* PDefine.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -351,7 +357,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
+				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
+				E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

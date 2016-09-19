@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let dic:Dictionary = Bundle.main.infoDictionary!
         let name:String = dic["CFBundleIdentifier"] as! String
-        print("123\(name)321\n\(dic)")
+        let value:String = name.appending(".value")
+        print("\(name)\n\(value)")
         
         
         self.window?.backgroundColor = UIColor.white
