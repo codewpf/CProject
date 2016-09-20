@@ -24,6 +24,8 @@
 		E3C084A11D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */; };
 		E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */; };
 		E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084A61D903AC00089EC43 /* PDefine.swift */; };
+		E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */; };
+		E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3170E1D9178C7002ECA59 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		E3C0849D1D8FF5E70089EC43 /* SVProgressHUD.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SVProgressHUD.framework.dSYM; path = ../../Carthage/Build/iOS/SVProgressHUD.framework.dSYM; sourceTree = "<group>"; };
 		E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPFKeychain.swift; sourceTree = "<group>"; };
 		E3C084A61D903AC00089EC43 /* PDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDefine.swift; sourceTree = "<group>"; };
+		E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		E3D3170E1D9178C7002ECA59 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		E3C084551D8FF4230089EC43 = {
 			isa = PBXGroup;
 			children = (
+				E3D3170D1D91784C002ECA59 /* Setting */,
 				E3C084A31D9033470089EC43 /* Tools */,
 				E3C084601D8FF4230089EC43 /* CProject */,
 				E3C084751D8FF4230089EC43 /* CProjectTests */,
@@ -193,10 +198,19 @@
 		E3C084A31D9033470089EC43 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */,
 				E3C084A61D903AC00089EC43 /* PDefine.swift */,
+				E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */,
+				E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		E3D3170D1D91784C002ECA59 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E3D3170E1D9178C7002ECA59 /* RootViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +283,7 @@
 				TargetAttributes = {
 					E3C0845D1D8FF4230089EC43 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 9GUW4K86M5;
+						DevelopmentTeam = GCZ69TW9QP;
 						ProvisioningStyle = Automatic;
 					};
 					E3C084711D8FF4230089EC43 = {
@@ -356,7 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
+				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
 				E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */,
@@ -511,14 +527,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9GUW4K86M5;
+				DEVELOPMENT_TEAM = GCZ69TW9QP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -528,14 +544,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9GUW4K86M5;
+				DEVELOPMENT_TEAM = GCZ69TW9QP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -614,6 +630,7 @@
 				E3C084881D8FF4230089EC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3C084891D8FF4230089EC43 /* Build configuration list for PBXNativeTarget "CProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -622,6 +639,7 @@
 				E3C0848B1D8FF4230089EC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3C0848C1D8FF4230089EC43 /* Build configuration list for PBXNativeTarget "CProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -630,6 +648,7 @@
 				E3C0848E1D8FF4230089EC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,12 +10,31 @@ import UIKit
 
 class WPFKeychain: NSObject {
 
-    let key:String = PDefine.PBunldeName()
-    let value:String = PDefine.PBunldeName().appending(".value")
     
+    class func readValue() -> String? {
+        do {
+            let passwordItems:[KeychainPasswordItem] = try KeychainPasswordItem.passwordItems(forService: PDefine.Keychain(type: .key))
+            
+            if passwordItems.count > 0 {
+                return try passwordItems[0].readPassword()
+            }else {
+                return nil
+            }
+        } catch  {
+            fatalError("Error fetching password - \(error)")
+        }
+    }
     
-    
-    
-    
-    
+    class func saveValue(value:String) -> Void {
+        
+        do {
+            let passwordItem = KeychainPasswordItem(service: PDefine.Keychain(type: .key), account: PDefine.Keychain(type: .key), accessGroup: nil)
+            try passwordItem.savePassword(value)
+        }
+        catch {
+            fatalError("Error updating keychain - \(error)")
+        }
+
+
+    }
 }
