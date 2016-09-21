@@ -90,6 +90,21 @@ class PDefine: NSObject {
         #endif
 
     }
+    
+    enum VCURLType {
+        case Home,Order,My
+    }
+    class func VCURL(_ type:VCURLType) -> String{
+        switch type {
+        case .Home:
+            return "http://app2.fujin.com/wap/index_wap.htm?f=ios&v=12109&openid=?"
+        case .Order:
+            return "http://n.fujin.com/android/weibi/buy_list_ios.htm"
+        case .My:
+            return "http://n.fujin.com/android/ios_my.htm"
+        }
+    }
+    
 }
 
 

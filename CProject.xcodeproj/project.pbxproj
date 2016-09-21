@@ -560,7 +560,7 @@
 				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CProject/CProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -578,7 +578,7 @@
 				);
 				INFOPLIST_FILE = CProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alex.CProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CProject/CProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

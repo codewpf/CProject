@@ -25,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc:ViewController = ViewController()
         self.window?.rootViewController = vc
         
-        WPFLog("\(PDefine.UUID())")
-                
+        
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         return true
