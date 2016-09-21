@@ -28,6 +28,7 @@
 		E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3170E1D9178C7002ECA59 /* RootViewController.swift */; };
 		E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */; };
 		E3D317141D926733002ECA59 /* JSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D317131D926733002ECA59 /* JSModel.swift */; };
+		E3D317161D926EE9002ECA59 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D317151D926EE9002ECA59 /* IAPHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkHelper.swift; sourceTree = "<group>"; };
 		E3D317121D9253FC002ECA59 /* CProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		E3D317131D926733002ECA59 /* JSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSModel.swift; sourceTree = "<group>"; };
+		E3D317151D926EE9002ECA59 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */,
 				E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */,
 				E3D317131D926733002ECA59 /* JSModel.swift */,
+				E3D317151D926EE9002ECA59 /* IAPHelper.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
 				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
+				E3D317161D926EE9002ECA59 /* IAPHelper.swift in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
 				E3D317141D926733002ECA59 /* JSModel.swift in Sources */,
