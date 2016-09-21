@@ -26,6 +26,7 @@
 		E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084A61D903AC00089EC43 /* PDefine.swift */; };
 		E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */; };
 		E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3170E1D9178C7002ECA59 /* RootViewController.swift */; };
+		E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		E3C084A61D903AC00089EC43 /* PDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDefine.swift; sourceTree = "<group>"; };
 		E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		E3D3170E1D9178C7002ECA59 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkHelper.swift; sourceTree = "<group>"; };
+		E3D317121D9253FC002ECA59 /* CProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CProject-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 				E3C084A21D8FF63D0089EC43 /* dSYM */,
 				E3C084651D8FF4230089EC43 /* Main.storyboard */,
 				E3C0846A1D8FF4230089EC43 /* LaunchScreen.storyboard */,
+				E3D317121D9253FC002ECA59 /* CProject-Bridging-Header.h */,
 			);
 			path = CProject;
 			sourceTree = "<group>";
@@ -201,6 +205,7 @@
 				E3C084A61D903AC00089EC43 /* PDefine.swift */,
 				E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */,
 				E3C084A41D903A5E0089EC43 /* WPFKeychain.swift */,
+				E3D317101D922BAF002ECA59 /* NetWorkHelper.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */,
+				E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
 				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
@@ -536,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CProject/CProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -553,6 +560,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/CProject/CProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
