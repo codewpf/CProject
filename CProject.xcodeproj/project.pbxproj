@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E314F86A1D93736600019BB5 /* WTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F8691D93736600019BB5 /* WTabBarController.swift */; };
+		E314F8711D94CF3C00019BB5 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E314F86E1D94CF3C00019BB5 /* NJKWebViewProgress.m */; };
+		E314F8721D94CF3C00019BB5 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E314F8701D94CF3C00019BB5 /* NJKWebViewProgressView.m */; };
 		E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084611D8FF4230089EC43 /* AppDelegate.swift */; };
 		E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084631D8FF4230089EC43 /* ViewController.swift */; };
 		E3C084671D8FF4230089EC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C084651D8FF4230089EC43 /* Main.storyboard */; };
@@ -66,6 +69,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E314F8691D93736600019BB5 /* WTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTabBarController.swift; sourceTree = "<group>"; };
+		E314F86D1D94CF3C00019BB5 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		E314F86E1D94CF3C00019BB5 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		E314F86F1D94CF3C00019BB5 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		E314F8701D94CF3C00019BB5 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		E3C0845E1D8FF4230089EC43 /* CProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C084611D8FF4230089EC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C084631D8FF4230089EC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,13 +135,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E314F86B1D94CF3100019BB5 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				E314F86C1D94CF3C00019BB5 /* NJKWebViewProgress */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
+		E314F86C1D94CF3C00019BB5 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				E314F86D1D94CF3C00019BB5 /* NJKWebViewProgress.h */,
+				E314F86E1D94CF3C00019BB5 /* NJKWebViewProgress.m */,
+				E314F86F1D94CF3C00019BB5 /* NJKWebViewProgressView.h */,
+				E314F8701D94CF3C00019BB5 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
 		E3C084551D8FF4230089EC43 = {
 			isa = PBXGroup;
 			children = (
-				E3D317171D927A46002ECA59 /* MVVM */,
-				E3D3170D1D91784C002ECA59 /* Setting */,
-				E3C084A31D9033470089EC43 /* Tools */,
 				E3C084601D8FF4230089EC43 /* CProject */,
+				E3D317171D927A46002ECA59 /* MVVM */,
+				E3C084A31D9033470089EC43 /* Tools */,
+				E3D3170D1D91784C002ECA59 /* Setting */,
+				E314F86B1D94CF3100019BB5 /* Git */,
 				E3C084751D8FF4230089EC43 /* CProjectTests */,
 				E3C084801D8FF4230089EC43 /* CProjectUITests */,
 				E3C0845F1D8FF4230089EC43 /* Products */,
@@ -231,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D317181D927A6E002ECA59 /* WebVC.swift */,
+				E314F8691D93736600019BB5 /* WTabBarController.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -396,9 +425,12 @@
 				E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
 				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
+				E314F8711D94CF3C00019BB5 /* NJKWebViewProgress.m in Sources */,
 				E3D317161D926EE9002ECA59 /* IAPHelper.swift in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
+				E314F8721D94CF3C00019BB5 /* NJKWebViewProgressView.m in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
+				E314F86A1D93736600019BB5 /* WTabBarController.swift in Sources */,
 				E3D317191D927A6E002ECA59 /* WebVC.swift in Sources */,
 				E3D317141D926733002ECA59 /* JSModel.swift in Sources */,
 				E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */,

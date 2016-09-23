@@ -12,31 +12,35 @@ import SnapKit
 import SVProgressHUD
 import JavaScriptCore
 
-class WebVC: RootViewController, UIWebViewDelegate {
-
+class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
+    
     // MARK: - Property
     var jsContext: JSContext? = nil
     var webUrl: String?
     
     var webView: UIWebView? = nil
-
+    var progressView: NJKWebViewProgressView? = nil
+    var progressProxy: NJKWebViewProgress? = nil
+    
+    // MARK: - Methods -
     init(_ webUrl: String) {
         self.webUrl = webUrl
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.addSubview(self.progressView!)
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.progressView?.removeFromSuperview()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        
         self.createBarButtonItem("刷新", self, #selector(self.refresh), .NavBtn_Right, "123", "123")
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.resultRefresh), name: NSNotification.Name(rawValue: "Pay_Success"), object: nil
@@ -44,25 +48,45 @@ class WebVC: RootViewController, UIWebViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "Tab_Refresh"), object: nil)
         
         self.webView = UIWebView()
-        self.webView?.delegate = self
+//        self.webView?.delegate = self
         self.webView?.scrollView.keyboardDismissMode = .onDrag
         self.view.addSubview(self.webView!)
         self.webView?.snp.makeConstraints({ [unowned self] (make) in
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(PDefine.TabbarHeigth(), 0, -PDefine.TabbarHeigth(), 0))
-        })
-        self.loadRequest(url: self.webUrl!)
+            switch PD_CurrentTabBarType() {
+            case .first_Bottom:
+                make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, -PD_TabbarHeigth(), 0))
+            case .second_Top:
+                make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(PD_TabbarHeigth(), 0, 0, 0))
+                
+            }
+            })
+        
+        self.progressProxy = NJKWebViewProgress()
+        self.webView?.delegate = self.progressProxy
+        self.progressProxy?.webViewProxyDelegate = self
+        self.progressProxy?.progressDelegate = self;
+        
+        let size: CGSize = (self.navigationController?.navigationBar.bounds.size)!
+        self.progressView = NJKWebViewProgressView(frame: CGRectFromString( String(format: "{{0, %f}, {%f, 2}}", size.height-2, size.width)))
+        self.progressView?.progress = 0.0
+        
+        let request: URLRequest = URLRequest(url: URL(string: self.webUrl!)!)
+        self.webView?.loadRequest(request)
 
+        
+        //self.loadRequest(url: self.webUrl!)
     }
     
     
     // MARK: - PrivateMethods
     /// 加载网页
     func loadRequest(url: String)  {
-        let request: NSURLRequest = NSURLRequest(url: NSURL(string: url)! as URL)
-        self.webView?.loadRequest(request as URLRequest)
+        let request: URLRequest = URLRequest(url: URL(string: url)!)
+        self.webView?.loadRequest(request)
     }
     /// 刷新网页
     func refresh() {
+        
         if self.webView != nil {
             self.webView?.reload()
         }
@@ -70,11 +94,11 @@ class WebVC: RootViewController, UIWebViewDelegate {
     
     /// 如果当前是订单页面 收到通知进行刷新
     func resultRefresh() {
-        if self.webView != nil && self.webUrl == PDefine.VCURL(.Order) {
+        if self.webView != nil && self.webUrl == PD_RootVCURL(.order) {
             self.webView?.reload()
         }
     }
-
+    
     /// 返回按钮点击
     func backBtnClick() {
         if self.webView != nil  && self.webView?.canGoBack == true {
@@ -89,9 +113,9 @@ class WebVC: RootViewController, UIWebViewDelegate {
     
     /// 判断是不是一级页面
     func isRootVC() -> Bool{
-        if self.webUrl == PDefine.VCURL(.Home) ||
-            self.webUrl == PDefine.VCURL(.Order) ||
-            self.webUrl == PDefine.VCURL(.My) {
+        if self.webUrl == PD_RootVCURL(.home) ||
+            self.webUrl == PD_RootVCURL(.order) ||
+            self.webUrl == PD_RootVCURL(.my) {
             return true
         }
         return false
@@ -105,15 +129,15 @@ class WebVC: RootViewController, UIWebViewDelegate {
         }
         return false
     }
-
+    
     /// 跳转苹果内购界面
     func iapList(_ productsID: String) {
         
         var temp: [String] = productsID.components(separatedBy: ",")
         var array: [String] = []
-        DispatchQueue.global().async { 
+        DispatchQueue.global().async {
             while temp.count > 0 {
-                array.append(String(format: "%@.%@", PDefine.PBunldeName(),temp[0]))
+                array.append(String(format: "%@.%@", PD_BunldeProjectName(),temp[0]))
                 temp.removeFirst()
             }
         }
@@ -123,28 +147,33 @@ class WebVC: RootViewController, UIWebViewDelegate {
             if self.isRootVC() {
                 message = "确认充值微币？"
             }
-            let alert:UIAlertController = UIAlertController.init(title: "提醒", message: message, preferredStyle: .alert)
+            let alert: UIAlertController = UIAlertController.init(title: "提醒", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "充值", style: .default , handler: { (action) in
                 
             }))
             alert.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
-            let delegate:AppDelegate! = UIApplication.shared.delegate as? AppDelegate
+            let delegate: AppDelegate! = UIApplication.shared.delegate as? AppDelegate
             delegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
             
         }
     }
-
+    
     
     
     
     // MARK: - UIWebViewDelegate
+    func webViewProgress(_ webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
+        self.progressView?.setProgress(progress, animated: true)
+        self.navigationItem.title = self.webView?.stringByEvaluatingJavaScript(from: "document.title")
+    }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
         // 增加返回或者关闭按钮
         self.addBackBtn()
         
         // 开始JS注入
-        let context:JSContext? = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext
-        let model:JSModel = JSModel()
+        let context: JSContext? = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as? JSContext
+        let model: JSModel = JSModel()
         model.webView = self.webView
         model.jsContext = context
         self.jsContext = context
@@ -156,7 +185,7 @@ class WebVC: RootViewController, UIWebViewDelegate {
         // 新页面加载网页
         model.opBlock = { (_ url: String) -> () in
             DispatchQueue.main.async {
-                let sub:WebVC = WebVC.init(url)
+                let sub: WebVC = WebVC.init(url)
                 sub.addBackBtn()
                 self.sPushViewController(viewController: sub, animated: true)
             }
@@ -176,9 +205,9 @@ class WebVC: RootViewController, UIWebViewDelegate {
         // 苹果支付
         model.pBlock = { [unowned self] (_ productsID: String) -> () in
             if self.isJailBreak() {
-                let alert:UIAlertController = UIAlertController.init(title: "提醒", message: "您的手机已经越狱，购买存在风险，请进QQ群咨询！", preferredStyle: .alert)
+                let alert: UIAlertController = UIAlertController.init(title: "提醒", message: "您的手机已经越狱，购买存在风险，请进QQ群咨询！", preferredStyle: .alert)
                 alert.addAction(UIAlertAction.init(title: "好的", style: .default, handler: nil))
-                let delegate:AppDelegate! = UIApplication.shared.delegate as? AppDelegate
+                let delegate: AppDelegate! = UIApplication.shared.delegate as? AppDelegate
                 delegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
             } else {
                 self.iapList(productsID)
@@ -211,10 +240,19 @@ class WebVC: RootViewController, UIWebViewDelegate {
                 self.createBarButtonItems(["返回"], self, [#selector(self.popVc)], .NavBtn_Left, ["123"], ["123"])
                 
             }
-
+            
         }
     }
-
+    
+    
+    
+    
+    
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

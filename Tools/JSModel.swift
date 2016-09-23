@@ -55,7 +55,7 @@ typealias AliPayBlock = (_ orderID: String, _ subject:String, _ body:String, _ p
 typealias WechatBlock = (_ orderID: String, _ body:String, _ price:String, _ notification:Bool) -> ()
 
 
-class JSModel: NSObject {
+class JSModel: NSObject , JSModelExports{
     
     weak var jsContext: JSContext? = nil
     weak var webView: UIWebView? = nil
@@ -68,12 +68,12 @@ class JSModel: NSObject {
     
     /// 获取设备码
     func getPhone() -> String {
-        return PDefine.UUID()
+        return PD_UUID()
     }
     
     /// 获取版本
     func getBeta() -> String {
-        return "12109"
+        return PD_GetV()
     }
     
     /// 跳转网页

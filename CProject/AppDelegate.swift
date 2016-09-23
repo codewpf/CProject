@@ -14,30 +14,35 @@ import SVProgressHUD
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabConfig: WTabBarController?
     var timer: Timer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
+                
         
-        self.baseInit()
         
-        let vc:ViewController = ViewController()
-        self.window?.rootViewController = vc
-        
+        self.initBase()
+        self.initRoot()
         
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         return true
     }
     
-    func baseInit() {
+    func initBase() {
         
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.setForegroundColor(UIColor.cyan)
-        SVProgressHUD.setBackgroundColor(PDefine.SVProgressColor())
+        SVProgressHUD.setBackgroundColor(PD_SVProgressColor())
         SVProgressHUD.setMinimumDismissTimeInterval(2)
+    }
+    
+    func initRoot() {
+        self.tabConfig = WTabBarController()
+        self.window?.rootViewController = self.tabConfig
     }
 
     func reQuest() -> Void {

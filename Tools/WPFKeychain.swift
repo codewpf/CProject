@@ -13,7 +13,7 @@ class WPFKeychain: NSObject {
     
     class func readValue() -> String? {
         do {
-            let passwordItems:[KeychainPasswordItem] = try KeychainPasswordItem.passwordItems(forService: PDefine.Keychain(type: .key))
+            let passwordItems: [KeychainPasswordItem] = try KeychainPasswordItem.passwordItems(forService: PD_CurrentKeychain(type: .key))
             
             if passwordItems.count > 0 {
                 return try passwordItems[0].readPassword()
@@ -25,10 +25,10 @@ class WPFKeychain: NSObject {
         }
     }
     
-    class func saveValue(value:String) -> Void {
+    class func saveValue(value: String) -> Void {
         
         do {
-            let passwordItem = KeychainPasswordItem(service: PDefine.Keychain(type: .key), account: PDefine.Keychain(type: .key), accessGroup: nil)
+            let passwordItem = KeychainPasswordItem(service: PD_CurrentKeychain(type: .key), account: PD_CurrentKeychain(type: .key), accessGroup: nil)
             try passwordItem.savePassword(value)
         }
         catch {

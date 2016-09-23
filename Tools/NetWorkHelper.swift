@@ -18,7 +18,7 @@ class NetWorkHelper: NSObject {
     
     func netWorkReachabilityWithURLString(url: String) -> Bool{
         
-        let reach:NetworkReachabilityManager = NetworkReachabilityManager()!
+        let reach: NetworkReachabilityManager = NetworkReachabilityManager()!
         if reach.isReachable {
             return true
         }else{
@@ -41,18 +41,18 @@ class NetWorkHelper: NSObject {
     }
 
     class func rePostData() {
-        if let temp:NSDictionary = UserDefaults.standard.object(forKey: PDefine.UserDefaultsReceiptKey()) as! NSDictionary? {
-            let dict:NSMutableDictionary = NSMutableDictionary.init(dictionary: temp)
+        if let temp: NSDictionary = UserDefaults.standard.object(forKey: PD_SserReceiptKey()) as! NSDictionary? {
+            let dict: NSMutableDictionary = NSMutableDictionary.init(dictionary: temp)
             for (key,value) in dict {
                 
-                let md5Str = String("\(PDefine.UUID())apple_is_not_good")?.md5String
-                let para = ["receipt-url":PDefine.receiptURLType(), "receipt-data":value, "md5-data":md5Str, "pc-data":PDefine.UUID()]
-                NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PDefine.serverURL(), para: para, block: { (state, result) in
+                let md5Str = String("\(PD_UUID())apple_is_not_good")?.md5String
+                let para = ["receipt-url":PD_ReceiptURLType(), "receipt-data":value, "md5-data":md5Str, "pc-data":PD_UUID()]
+                NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PD_ServerURL(), para: para, block: { (state, result) in
                     if state {
                         if let code: NSNumber = (result.object(forKey: "code") as? NSNumber) {
                             if code == NSNumber(integerLiteral: 1) {
                                 dict.removeObject(forKey: key)
-                                UserDefaults.standard.set(dict, forKey: PDefine.UserDefaultsReceiptKey())
+                                UserDefaults.standard.set(dict, forKey: PD_SserReceiptKey())
                                 UserDefaults.standard.synchronize()
                             }
                         }

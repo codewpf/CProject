@@ -67,7 +67,7 @@ struct KeychainPasswordItem {
             else{
                 throw KeychainError.unexpectedPasswordData
             }
-            return dic.object(forKey: PDefine.Keychain(type: .value)) as! String
+            return dic.object(forKey: PD_CurrentKeychain(type: .value)) as! String
         }
         
         return password

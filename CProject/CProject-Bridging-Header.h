@@ -13,4 +13,6 @@
 
 #endif /* CProject_Bridging_Header_h */
 
-#import<CommonCrypto/CommonCrypto.h>
+#import <CommonCrypto/CommonCrypto.h>
+#import "NJKWebViewProgress.h"
+#import "NJKWebViewProgressView.h"

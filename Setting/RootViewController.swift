@@ -57,7 +57,7 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(objects: [UIFont.boldSystemFont(ofSize: 20), UIColor.white], forKeys: [NSFontAttributeName as NSCopying, NSForegroundColorAttributeName as NSCopying]) as? [String : AnyObject]
         self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.barTintColor = PDefine.SystemColor()
+        self.navigationController?.navigationBar.barTintColor = PD_NavbarColor()
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
