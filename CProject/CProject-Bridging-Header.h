@@ -16,3 +16,6 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
+
+#import <AlipaySDK/AlipaySDK.h>
+#import "AlipayHelper.h"

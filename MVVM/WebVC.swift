@@ -200,6 +200,18 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         
         // 支付宝支付
         model.aBlock = { (_ orderID: String, _ subject:String, _ body:String, _ price:String, _ notification:Bool) -> () in
+            let product: Product = Product()
+            product.orderId = orderID;
+            product.subject = subject;
+            product.body = body;
+            product.price = Float(price)!;
+            product.notification = notification;
+            
+            SVProgressHUD.show(withStatus: "正在准备跳转支付宝...")
+            AlipayHelper.shared().alipay(product, block: { (dict) in
+                AlipayHelper.shared().aliPayResult(dict, vc: self.navigationController?.topViewController)
+            })
+            
             
         }
         

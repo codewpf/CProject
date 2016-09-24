@@ -87,10 +87,8 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate, UINavig
     {
         let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         if viewController.hidesBottomBarWhenPushed {
-            WPFLog("123")
             delegate.tabConfig?.hideTapView()
         } else {
-            WPFLog("")
             delegate.tabConfig?.showTapView()
         }
     }

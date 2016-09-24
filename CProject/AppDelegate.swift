@@ -46,12 +46,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func reQuest() -> Void {
-        
+        NetWorkHelper.rePostData()
     }
     
     
-    
-    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if url.host == "safepay" {
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (resultDic) in
+                AlipayHelper.shared().aliPayResult(resultDic, vc: self.window?.rootViewController)
+            })
+        } else {
+        
+        }
+        
+        
+        
+        return true
+    }
     
     
     func applicationWillResignActive(_ application: UIApplication) {
