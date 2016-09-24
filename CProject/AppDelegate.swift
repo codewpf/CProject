@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import SVProgressHUD
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -32,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initBase() {
+        let result = WXApi.registerApp(WeChatAppID)
         
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setDefaultMaskType(.gradient)
@@ -57,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 AlipayHelper.shared().aliPayResult(resultDic, vc: self.window?.rootViewController)
             })
         } else {
-        
+            WXApi.handleOpen(url, delegate: WXApiManager.shared())
         }
         
         

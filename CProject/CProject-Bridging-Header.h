@@ -19,3 +19,7 @@
 
 #import <AlipaySDK/AlipaySDK.h>
 #import "AlipayHelper.h"
+
+#import "WechatHelper.h"
+#import "WXApi.h"
+#import "WXApiManager.h"

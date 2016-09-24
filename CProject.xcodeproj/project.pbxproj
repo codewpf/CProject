@@ -59,6 +59,16 @@
 		E3D85AF81D96643B002DF00D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D85AF71D96643B002DF00D /* SystemConfiguration.framework */; };
 		E3D85AFA1D966442002DF00D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D85AF91D966442002DF00D /* libz.tbd */; };
 		E3D85AFB1D96644A002DF00D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D85AE51D9663F0002DF00D /* libc++.tbd */; };
+		E3D85B111D966BDE002DF00D /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D85AFD1D966BDE002DF00D /* libWeChatSDK.a */; };
+		E3D85B121D966BDE002DF00D /* WechatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B001D966BDE002DF00D /* WechatHelper.m */; };
+		E3D85B131D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B061D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B141D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B081D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B151D966BDE002DF00D /* WXApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B0A1D966BDE002DF00D /* WXApiManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B161D966BDE002DF00D /* WXApiRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B0C1D966BDE002DF00D /* WXApiRequestHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B171D966BDE002DF00D /* WXApiResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B0E1D966BDE002DF00D /* WXApiResponseHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B181D966BDE002DF00D /* WXMediaMessage+messageConstruct.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B101D966BDE002DF00D /* WXMediaMessage+messageConstruct.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E3D85B1C1D966CEA002DF00D /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D85B1B1D966CEA002DF00D /* XMLDictionary.m */; };
+		E3D85B1E1D967650002DF00D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D85B1D1D967650002DF00D /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +253,28 @@
 		E3D85AF51D966432002DF00D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		E3D85AF71D96643B002DF00D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E3D85AF91D966442002DF00D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E3D85AFD1D966BDE002DF00D /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		E3D85AFE1D966BDE002DF00D /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		E3D85AFF1D966BDE002DF00D /* WechatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatHelper.h; sourceTree = "<group>"; };
+		E3D85B001D966BDE002DF00D /* WechatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatHelper.m; sourceTree = "<group>"; };
+		E3D85B011D966BDE002DF00D /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		E3D85B021D966BDE002DF00D /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		E3D85B041D966BDE002DF00D /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		E3D85B051D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		E3D85B061D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GetMessageFromWXResp+responseWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		E3D85B071D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.h"; sourceTree = "<group>"; };
+		E3D85B081D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestWithTextOrMediaMessage.m"; sourceTree = "<group>"; };
+		E3D85B091D966BDE002DF00D /* WXApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiManager.h; sourceTree = "<group>"; };
+		E3D85B0A1D966BDE002DF00D /* WXApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiManager.m; sourceTree = "<group>"; };
+		E3D85B0B1D966BDE002DF00D /* WXApiRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiRequestHandler.h; sourceTree = "<group>"; };
+		E3D85B0C1D966BDE002DF00D /* WXApiRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiRequestHandler.m; sourceTree = "<group>"; };
+		E3D85B0D1D966BDE002DF00D /* WXApiResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiResponseHandler.h; sourceTree = "<group>"; };
+		E3D85B0E1D966BDE002DF00D /* WXApiResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXApiResponseHandler.m; sourceTree = "<group>"; };
+		E3D85B0F1D966BDE002DF00D /* WXMediaMessage+messageConstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+messageConstruct.h"; sourceTree = "<group>"; };
+		E3D85B101D966BDE002DF00D /* WXMediaMessage+messageConstruct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WXMediaMessage+messageConstruct.m"; sourceTree = "<group>"; };
+		E3D85B1A1D966CEA002DF00D /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		E3D85B1B1D966CEA002DF00D /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		E3D85B1D1D967650002DF00D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D85B1E1D967650002DF00D /* libsqlite3.tbd in Frameworks */,
 				E3D85AFB1D96644A002DF00D /* libc++.tbd in Frameworks */,
 				E3D85AFA1D966442002DF00D /* libz.tbd in Frameworks */,
 				E3D85AF81D96643B002DF00D /* SystemConfiguration.framework in Frameworks */,
@@ -262,6 +295,7 @@
 				E3D85AEA1D966401002DF00D /* CFNetwork.framework in Frameworks */,
 				E3D85AE81D9663FA002DF00D /* CoreMotion.framework in Frameworks */,
 				E3C084941D8FF5090089EC43 /* AFNetworking.framework in Frameworks */,
+				E3D85B111D966BDE002DF00D /* libWeChatSDK.a in Frameworks */,
 				E3D85AD81D9657D3002DF00D /* AlipaySDK.framework in Frameworks */,
 				E3D85ADA1D9657D3002DF00D /* libssl.a in Frameworks */,
 				E3D85AD91D9657D3002DF00D /* libcrypto.a in Frameworks */,
@@ -369,6 +403,7 @@
 		E3C0848F1D8FF5090089EC43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3D85B1D1D967650002DF00D /* libsqlite3.tbd */,
 				E3D85AF91D966442002DF00D /* libz.tbd */,
 				E3D85AF71D96643B002DF00D /* SystemConfiguration.framework */,
 				E3D85AF51D966432002DF00D /* CoreTelephony.framework */,
@@ -402,6 +437,7 @@
 		E3C084A31D9033470089EC43 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E3D85AFC1D966BDE002DF00D /* WeChatSDK */,
 				E3D85A6F1D9657D3002DF00D /* AlipaySDK */,
 				E3C084A61D903AC00089EC43 /* PDefine.swift */,
 				E3D3170B1D915D9B002ECA59 /* KeychainPasswordItem.swift */,
@@ -552,6 +588,50 @@
 				E3D85AD51D9657D3002DF00D /* RSADataVerifier.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		E3D85AFC1D966BDE002DF00D /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E3D85B191D966CEA002DF00D /* XMLDictionary */,
+				E3D85AFD1D966BDE002DF00D /* libWeChatSDK.a */,
+				E3D85AFE1D966BDE002DF00D /* WechatAuthSDK.h */,
+				E3D85AFF1D966BDE002DF00D /* WechatHelper.h */,
+				E3D85B001D966BDE002DF00D /* WechatHelper.m */,
+				E3D85B011D966BDE002DF00D /* WXApi.h */,
+				E3D85B021D966BDE002DF00D /* WXApiObject.h */,
+				E3D85B031D966BDE002DF00D /* WXHelper */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		E3D85B031D966BDE002DF00D /* WXHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E3D85B041D966BDE002DF00D /* Constant.h */,
+				E3D85B051D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.h */,
+				E3D85B061D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m */,
+				E3D85B071D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.h */,
+				E3D85B081D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m */,
+				E3D85B091D966BDE002DF00D /* WXApiManager.h */,
+				E3D85B0A1D966BDE002DF00D /* WXApiManager.m */,
+				E3D85B0B1D966BDE002DF00D /* WXApiRequestHandler.h */,
+				E3D85B0C1D966BDE002DF00D /* WXApiRequestHandler.m */,
+				E3D85B0D1D966BDE002DF00D /* WXApiResponseHandler.h */,
+				E3D85B0E1D966BDE002DF00D /* WXApiResponseHandler.m */,
+				E3D85B0F1D966BDE002DF00D /* WXMediaMessage+messageConstruct.h */,
+				E3D85B101D966BDE002DF00D /* WXMediaMessage+messageConstruct.m */,
+			);
+			path = WXHelper;
+			sourceTree = "<group>";
+		};
+		E3D85B191D966CEA002DF00D /* XMLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				E3D85B1A1D966CEA002DF00D /* XMLDictionary.h */,
+				E3D85B1B1D966CEA002DF00D /* XMLDictionary.m */,
+			);
+			path = XMLDictionary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,21 +795,29 @@
 				E3D85AE11D9657D3002DF00D /* openssl_wrapper.m in Sources */,
 				E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */,
 				E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */,
+				E3D85B131D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				E3D85AE01D9657D3002DF00D /* NSDataEx.m in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
 				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
 				E314F8711D94CF3C00019BB5 /* NJKWebViewProgress.m in Sources */,
 				E3D317161D926EE9002ECA59 /* IAPHelper.swift in Sources */,
+				E3D85B121D966BDE002DF00D /* WechatHelper.m in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
 				E314F8721D94CF3C00019BB5 /* NJKWebViewProgressView.m in Sources */,
+				E3D85B181D966BDE002DF00D /* WXMediaMessage+messageConstruct.m in Sources */,
+				E3D85B141D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
+				E3D85B161D966BDE002DF00D /* WXApiRequestHandler.m in Sources */,
 				E314F86A1D93736600019BB5 /* WTabBarController.swift in Sources */,
+				E3D85B1C1D966CEA002DF00D /* XMLDictionary.m in Sources */,
 				E3D85ADF1D9657D3002DF00D /* MD5DataSigner.m in Sources */,
 				E3D85A6E1D95132B002DF00D /* AppStoreListVC.swift in Sources */,
 				E3D85AD61D9657D3002DF00D /* AlipayHelper.m in Sources */,
+				E3D85B171D966BDE002DF00D /* WXApiResponseHandler.m in Sources */,
 				E3D85AE21D9657D3002DF00D /* RSADataSigner.m in Sources */,
 				E3D85AE31D9657D3002DF00D /* RSADataVerifier.m in Sources */,
 				E3D317191D927A6E002ECA59 /* WebVC.swift in Sources */,
+				E3D85B151D966BDE002DF00D /* WXApiManager.m in Sources */,
 				E3D317141D926733002ECA59 /* JSModel.swift in Sources */,
 				E3D85ADB1D9657D3002DF00D /* Order.m in Sources */,
 				E3D85ADD1D9657D3002DF00D /* DataSigner.m in Sources */,
@@ -901,6 +989,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tools/AlipaySDK",
+					"$(PROJECT_DIR)/Tools/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -927,6 +1016,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Tools/AlipaySDK",
+					"$(PROJECT_DIR)/Tools/WeChatSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.PMiaoZan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

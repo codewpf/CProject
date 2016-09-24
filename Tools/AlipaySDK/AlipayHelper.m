@@ -12,17 +12,6 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 
-/////////////////////// 支付宝支付参数 ///////////////////////
-#define AlipayPARTNER           @"2088121410617894"
-#define AlipaySELLER            @"c@fujin.com"
-#define AlipayRSA_PRIVATE       @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAM2/QLZlFA32rBavU/5iM2HhuWphSyV5moC0IRgPyJKDQMylFczQ/XzOB7PZuFc674hcpMaWPe/uknJBFM38w0o+jdg8p/1kVj1JhrMO5MFFxcIjdqJ9uxEwLqy9FXFdcdnnpVrA/Pk65gCxjeHMHNdn4wDDvuPidt07a+qVhFnjAgMBAAECgYEAiQdXkiK/uI0REAq1ZjcBAa/UTYV/BvZ2cEGHyP66FtpTzfglDMQkD3soph/bJj2aSrdpBtoJZkL+RhoSQR6W8Snz1gmx1MjuQGdCd6Pw2Ya2gC3fol1/S2u/lkuMeZtNozHOkegKD7aabG2Ulvo9CrVygwFpopSmumGuxwMeJAECQQDqOTKQEYhD/1FkKb5ZM+na6urc6mB1wTl4rtooU59kBHQkrUiLNX3lTih8MH1589PTQvTTdFfr2HtLMmeN5c6NAkEA4OBImQXDO7k2d70+boJPlY15mJEK3nz7H8lh5+JyZd2kE2GHARBZ7D5NRqAuLmIKapm1rNa5BHPgw1CLvvSmLwJBAJJm1hf/HXGDMViuTvBq5o2TsOINDeYMtOOeR3ZVbpeRwRb7yRBaiyq9Q8j8djG4Gns+qtFRM3OTiN1j0B59ujECQFjiTc+uJ20D2DOb6YFkoHBMazOSoOkwHVKDFt/A8daxtJi0g9g3zlNCjOjNh3Nt7RAVkWmvtZG8+6o3vATOTqECQEi5wuYhDt7TfARauHDpgT35nVogynDnpSc6/8HNLDc437n6a2uMJdeIQIo+usfZhYzzuQ6piH0oU8frTqegU78="
-
-// 直接支付 回调地址
-#define AlipayBackPay           @"http://pay.fujin.com/aspx/alipayreturn_app1_qqyw_c.aspx"
-// 充值微币 回调地址
-#define AlipayBackCharge        @"http://pay.fujin.com/aspx/alipayreturn_app1_chongzhi_c.aspx"
-
-
 @implementation Product
 
 
@@ -59,9 +48,11 @@
         [seller length] == 0 ||
         [privateKey length] == 0)
     {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"缺少partner或者seller或者私钥。" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"缺少partner或者seller或者私钥。" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+        });
         return;
     }
     

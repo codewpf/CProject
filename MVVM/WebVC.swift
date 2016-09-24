@@ -48,7 +48,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "Tab_Refresh"), object: nil)
         
         self.webView = UIWebView()
-//        self.webView?.delegate = self
+        //        self.webView?.delegate = self
         self.webView?.scrollView.keyboardDismissMode = .onDrag
         self.view.addSubview(self.webView!)
         self.webView?.snp.makeConstraints({ [unowned self] (make) in
@@ -72,7 +72,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         
         let request: URLRequest = URLRequest(url: URL(string: self.webUrl!)!)
         self.webView?.loadRequest(request)
-
+        
         
         //self.loadRequest(url: self.webUrl!)
     }
@@ -153,9 +153,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
                 self.sPushViewController(list, animated: true)
             }))
             alert.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
-            let delegate: AppDelegate! = UIApplication.shared.delegate as? AppDelegate
-            delegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -195,6 +193,19 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         // 微信支付
         model.wBlock = { (_ orderID: String, _ body:String, _ price:String, _ notification:Bool) -> () in
             
+            if WXApi.isWXAppInstalled() {
+                SVProgressHUD.show(withStatus: "正在准备跳转微信...")
+                WechatHelper.shared().wechatPay(orderID, body: body, price: price, notification: notification)
+            } else {
+                DispatchQueue.main.async {
+                    let alert: UIAlertController = UIAlertController.init(title: "提醒", message: "检测未安装微信，是前往AppStore下载？", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction.init(title: "安装", style: .default, handler: { (action) in
+                        UIApplication.shared.open(URL(string: WXApi.getWXAppInstallUrl())!, options: [:], completionHandler: nil)
+                    }))
+                    alert.addAction(UIAlertAction.init(title: "下次", style: .cancel, handler: nil))
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                }
+            }
             
         }
         
@@ -218,10 +229,11 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         // 苹果支付
         model.pBlock = { [unowned self] (_ productsID: String) -> () in
             if self.isJailBreak() {
-                let alert: UIAlertController = UIAlertController.init(title: "提醒", message: "您的手机已经越狱，购买存在风险，请进QQ群咨询！", preferredStyle: .alert)
-                alert.addAction(UIAlertAction.init(title: "好的", style: .default, handler: nil))
-                let delegate: AppDelegate! = UIApplication.shared.delegate as? AppDelegate
-                delegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    let alert: UIAlertController = UIAlertController.init(title: "提醒", message: "您的手机已经越狱，购买存在风险，请进QQ群咨询！", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction.init(title: "好的", style: .default, handler: nil))
+                    UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+                }
             } else {
                 self.iapList(productsID)
             }
