@@ -41,7 +41,7 @@ class NetWorkHelper: NSObject {
     }
 
     class func rePostData() {
-        if let temp: NSDictionary = UserDefaults.standard.object(forKey: PD_SserReceiptKey()) as! NSDictionary? {
+        if let temp: NSDictionary = UserDefaults.standard.object(forKey: PD_UserReceiptKey()) as! NSDictionary? {
             let dict: NSMutableDictionary = NSMutableDictionary.init(dictionary: temp)
             for (key,value) in dict {
                 
@@ -52,7 +52,7 @@ class NetWorkHelper: NSObject {
                         if let code: NSNumber = (result.object(forKey: "code") as? NSNumber) {
                             if code == NSNumber(integerLiteral: 1) {
                                 dict.removeObject(forKey: key)
-                                UserDefaults.standard.set(dict, forKey: PD_SserReceiptKey())
+                                UserDefaults.standard.set(dict, forKey: PD_UserReceiptKey())
                                 UserDefaults.standard.synchronize()
                             }
                         }

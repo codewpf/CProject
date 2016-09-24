@@ -13,7 +13,7 @@ enum NavbtnType {
     case NavBtn_Right
 }
 
-class RootViewController: UIViewController, UIGestureRecognizerDelegate {
+class RootViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,7 +49,7 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        self.navigationController?.delegate = self
         self.setNavigationBarBackgroundImage()
     }
     
@@ -72,17 +72,28 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate {
 
     /// 返回上一层动作
     func leftAciton() {
-        let _ = self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     /// 自定义Push方法
-    func sPushViewController(viewController: UIViewController, animated: Bool) {
+    func sPushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.isKind(of: WebVC.self){
             viewController.hidesBottomBarWhenPushed = true
         }
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
 
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool)
+    {
+        let delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        if viewController.hidesBottomBarWhenPushed {
+            WPFLog("123")
+            delegate.tabConfig?.hideTapView()
+        } else {
+            WPFLog("")
+            delegate.tabConfig?.showTapView()
+        }
+    }
     
     
     /// 添加多个按钮

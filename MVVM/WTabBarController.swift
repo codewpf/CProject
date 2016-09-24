@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SnapKit
 
 class WTabBarController: UITabBarController {
-
+    
     
     var tabView: UIView = UIView()
     
@@ -51,7 +52,9 @@ class WTabBarController: UITabBarController {
         
         self.tabView.backgroundColor = UIColor(white: 248.0/255.0, alpha: 1.0)
         self.tabView.snp.makeConstraints { [unowned self] (make) in
-            make.left.right.bottom.equalTo(self.view)
+            make.left.equalTo(self.view.snp.left)
+            make.bottom.equalTo(self.view)
+            make.width.equalTo(PD_Width())
             make.height.equalTo(PD_TabbarHeigth())
         }
         
@@ -80,27 +83,28 @@ class WTabBarController: UITabBarController {
             btn.tag = i
             btn.addTarget(self, action: #selector(self.firstBtnClick), for: .touchUpInside)
             self.tabView.addSubview(btn)
+            
             btn.snp.makeConstraints({ [unowned self] (make) in
                 make.top.equalTo(self.tabView)
-                make.left.equalTo(self.tabView).offset(PD_Width()/3*Float(i))
+                make.left.equalTo(self.tabView).offset(PD_Width()/3.0*CGFloat(i))
                 make.width.equalTo(PD_Width()/3)
                 make.height.equalTo(self.tabView)
-            })
+                })
             self.btns.append(btn)
             
-//            let titleW: CGFloat = (btn.titleLabel?.frame.size.width)!
+            //            let titleW: CGFloat = (btn.titleLabel?.frame.size.width)!
             let imageW: CGFloat = (btn.imageView?.frame.size.width)!
-
-//            if i == 0 {
-//                print((btn.titleLabel?.frame.size.width)!,(btn.imageView?.frame.size.width)!)
-//                print(titleW,imageW)
-//                print(type(of: titleW),type(of:(btn.titleLabel?.frame.size.width)!))
-//            }
+            
+            //            if i == 0 {
+            //                print((btn.titleLabel?.frame.size.width)!,(btn.imageView?.frame.size.width)!)
+            //                print(titleW,imageW)
+            //                print(type(of: titleW),type(of:(btn.titleLabel?.frame.size.width)!))
+            //            }
             
             btn.imageEdgeInsets = UIEdgeInsetsMake(0, (btn.titleLabel?.frame.size.width)!/2.0, 15, -(btn.titleLabel?.frame.size.width)!/2.0)
             btn.titleEdgeInsets = UIEdgeInsetsMake(34, -imageW/2.0, 0, imageW/2.0)
-
-
+            
+            
         }
         
         
@@ -122,7 +126,7 @@ class WTabBarController: UITabBarController {
         btn.setTitleColor(self.highLightColor(), for: .normal)
         self.selectedIndex = btn.tag
     }
-
+    
     
     /// 初始化 顶部类型 Tab
     func initSecondTop() -> Void {
@@ -130,7 +134,50 @@ class WTabBarController: UITabBarController {
         
     }
     
-
+    func showTapView() -> Void {
+        
+        switch PD_CurrentTabBarType() {
+        case .first_Bottom:
+            UIView.animate(withDuration: 0.25) {
+                
+                self.tabView.snp.updateConstraints({ (make) in
+                    make.left.equalTo(self.view).offset(0)
+                })
+                self.updateConstraint()
+                
+            }
+            
+        case .second_Top:
+            print("待增加代码")
+        }
+        
+    }
+    
+    
+    func hideTapView() -> Void {
+        
+        switch PD_CurrentTabBarType() {
+        case .first_Bottom:
+            
+            UIView.animate(withDuration: 0.25) {
+                
+                self.tabView.snp.updateConstraints({ (make) in
+                    make.left.equalTo(self.view).offset(-PD_Width())
+                })
+                self.updateConstraint()
+            }
+            
+        case .second_Top:
+            print("待增加代码")
+        }
+        
+    }
+    
+    func updateConstraint() -> Void {
+        self.tabBar.isHidden = true
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+    }
     
     
     
@@ -143,9 +190,6 @@ class WTabBarController: UITabBarController {
     func highLightColor() -> UIColor {
         return UIColor(red: 33.0/255.0, green: 139.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     }
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {

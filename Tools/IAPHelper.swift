@@ -20,14 +20,14 @@ class IAPHelper: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserv
     var purchasedSuccessBlock: PurchasedSuccess? = nil
     var purchasedFailedBlock: PurchasedFailed? = nil
 
-    let sharedInstace: IAPHelper = IAPHelper()
+    static let sharedInstance: IAPHelper = IAPHelper()
     
-    func requestProducts(productIdentifiers: NSSet){
+    func requestProducts(_ productIdentifiers: NSSet){
         let request: SKProductsRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
         request.delegate = self;
         request.start()
     }
-    func buyProductIdentifier(product: SKProduct) {
+    func buyProductIdentifier(_ product: SKProduct) {
         let payment: SKPayment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
         

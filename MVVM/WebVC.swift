@@ -108,7 +108,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
     
     /// 返回上一页
     func popVc() {
-        let _ = self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     /// 判断是不是一级页面
@@ -149,7 +149,8 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
             }
             let alert: UIAlertController = UIAlertController.init(title: "提醒", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "充值", style: .default , handler: { (action) in
-                
+                let list: AppStoreListVC = AppStoreListVC(productsIDArray: array)
+                self.sPushViewController(list, animated: true)
             }))
             alert.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: nil))
             let delegate: AppDelegate! = UIApplication.shared.delegate as? AppDelegate
@@ -187,7 +188,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
             DispatchQueue.main.async {
                 let sub: WebVC = WebVC.init(url)
                 sub.addBackBtn()
-                self.sPushViewController(viewController: sub, animated: true)
+                self.sPushViewController(sub, animated: true)
             }
         }
         

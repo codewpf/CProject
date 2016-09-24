@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import StoreKit
+
 /// 自定义输出
 func WPFLog<T>(_ message: T)
 {
@@ -55,13 +57,13 @@ func PD_UUID() -> String {
 }
 
 /// 当前屏幕宽度
-func PD_Width() -> Float {
-    return Float(UIScreen.main.bounds.width)
+func PD_Width() -> CGFloat {
+    return UIScreen.main.bounds.width
 }
 
 /// 当前屏幕高度
-func PD_Height() -> Float {
-    return Float(UIScreen.main.bounds.height)
+func PD_Height() -> CGFloat {
+    return UIScreen.main.bounds.height
 }
 
 /// 钥匙串类型
@@ -79,7 +81,7 @@ func PD_CurrentKeychain(type:PD_KeychainType) -> String {
 }
 
 /// UserDefaults 收据Key
-func PD_SserReceiptKey() -> String {
+func PD_UserReceiptKey() -> String {
     return "receipt-datas-dict"
 }
 
@@ -167,7 +169,12 @@ extension String {
         
         return String(hash)
     }
+}
 
+extension SKProduct{
+    func describe() -> String {
+        return "localizedDescription=\(self.localizedDescription)\nlocalizedTitle=\(self.localizedTitle)\nprice=\(self.price)\npriceLocale=\(self.priceLocale)\nproductIdentifier=\(self.productIdentifier)"
+    }
 }
 
 

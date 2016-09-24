@@ -103,6 +103,7 @@ class JSModel: NSObject , JSModelExports{
     
     /// 虚拟币不够，跳转到苹果支付
     func phonepay(_ productsID: String) {
+        
         if self.pBlock != nil {
             self.pBlock!(productsID)
         }

@@ -32,7 +32,7 @@ class WPFKeychain: NSObject {
             try passwordItem.savePassword(value)
         }
         catch {
-            fatalError("Error updating keychain - \(error)")
+            //fatalError("Error updating keychain - \(error)")
         }
 
 
