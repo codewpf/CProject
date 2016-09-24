@@ -134,9 +134,9 @@ func PD_RootVCURL(_ type:PD_RootURLType) -> String{
 enum PD_TabBarType {
     case first_Bottom,second_Top
 }
-/// 返回TabBar类型
+/// 返回TabBar类型                      ******需要时修改******
 func PD_CurrentTabBarType() -> PD_TabBarType {
-    return .first_Bottom
+    return .second_Top
 }
 
 /// TabBar高度

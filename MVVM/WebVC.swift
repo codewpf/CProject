@@ -56,7 +56,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
             case .first_Bottom:
                 make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, -PD_TabbarHeigth(), 0))
             case .second_Top:
-                make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(PD_TabbarHeigth(), 0, 0, 0))
+                make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(PD_TabbarHeigth(), 0, -49, 0))
                 
             }
             })
