@@ -23,6 +23,7 @@ class WTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         self.tabBar.isHidden = true
         
+        
         let homeVC: WebVC = WebVC(PD_RootVCURL(.home))
         let homeNav: UINavigationController = UINavigationController(rootViewController: homeVC)
         

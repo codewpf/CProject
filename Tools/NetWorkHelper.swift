@@ -13,7 +13,7 @@ typealias NetWorkDataBlock = (_ state: Bool, _ result:AnyObject) -> ()
 
 
 class NetWorkHelper: NSObject {
-
+    
     static let sharedInstance: NetWorkHelper = NetWorkHelper()
     
     func netWorkReachabilityWithURLString(url: String) -> Bool{
@@ -26,8 +26,8 @@ class NetWorkHelper: NSObject {
         }
     }
     
-    func netWorkDataWith(_ method: Alamofire.HTTPMethod, url: String, para: [String : Any] , block: @escaping NetWorkDataBlock){
-                Alamofire.request(url, method: method, parameters: para, encoding: JSONEncoding.default)
+    func netWorkDataWith(_ method: Alamofire.HTTPMethod, url: String, para: [String : String] , block: @escaping NetWorkDataBlock){
+        Alamofire.request(url, method: method, parameters: para, encoding: URLEncoding.default)
             .responseJSON { response in
                 
                 if response.result.isSuccess {
@@ -39,7 +39,7 @@ class NetWorkHelper: NSObject {
         }
         
     }
-
+    
     class func rePostData() {
         if let temp: NSDictionary = UserDefaults.standard.object(forKey: PD_UserReceiptKey()) as! NSDictionary? {
             let dict: NSMutableDictionary = NSMutableDictionary.init(dictionary: temp)
@@ -47,7 +47,7 @@ class NetWorkHelper: NSObject {
                 
                 let md5Str = String("\(PD_UUID())apple_is_not_good")?.md5String
                 let para = ["receipt-url":PD_ReceiptURLType(), "receipt-data":value, "md5-data":md5Str, "pc-data":PD_UUID()]
-                NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PD_ServerURL(), para: para, block: { (state, result) in
+                NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PD_ServerURL(), para: para as! [String : String], block: { (state, result) in
                     if state {
                         if let code: NSNumber = (result.object(forKey: "code") as? NSNumber) {
                             if code == NSNumber(integerLiteral: 1) {

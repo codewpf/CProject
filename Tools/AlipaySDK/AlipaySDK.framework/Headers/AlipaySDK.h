@@ -44,7 +44,7 @@ typedef void(^CompletionBlock)(NSDictionary *resultDic);
  *
  *  @param orderStr       订单信息
  *  @param schemeStr      调用支付的app注册在info.plist中的scheme
- *  @param compltionBlock 支付结果回调Block
+ *  @param completionBlock 支付结果回调Block
  */
 - (void)payOrder:(NSString *)orderStr
       fromScheme:(NSString *)schemeStr

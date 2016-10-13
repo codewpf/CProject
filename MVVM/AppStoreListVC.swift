@@ -77,12 +77,12 @@ class AppStoreListVC: RootViewController, UITableViewDelegate, UITableViewDataSo
             
             let md5Str = String("\(PD_UUID())apple_is_not_good")?.md5String
             let para = ["receipt-url":PD_ReceiptURLType(), "receipt-data":receipt_data, "md5-data":md5Str, "pc-data":PD_UUID()]
-            NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PD_ServerURL(), para: para, block: { (state, result) in
+            NetWorkHelper.sharedInstance.netWorkDataWith(.post, url: PD_ServerURL(), para: para as! [String : String], block: { (state, result) in
                 
                 if state {
                     if let code: NSNumber = result.object(forKey: "code") as? NSNumber {
                         if code == NSNumber(value: 1) {
-                            SVProgressHUD.show(withStatus: "充值成功！")
+                            SVProgressHUD.showSuccess(withStatus: "充值成功！")
                             self.backAction()
                         } else {
                             let msg: String? = result.object(forKey: "msg") as? String

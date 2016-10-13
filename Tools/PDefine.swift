@@ -88,7 +88,7 @@ func PD_UserReceiptKey() -> String {
 
 /// 服务器地址
 func PD_ServerURL() -> String {
-    return "http://n.fujin.com/ashx/AppleManage.ashx"
+    return "https://ios.wrz3.com/ashx/AppleManage.ashx"
 }
 
 /// md5混淆key值
@@ -108,7 +108,7 @@ func PD_ReceiptURLType() -> String {
 
 // 网页V值
 func PD_GetV() -> String {
-    return "11328"
+    return "12112"
 }
 
 /// 返回网页URLType
@@ -117,13 +117,14 @@ enum PD_RootURLType {
 }
 /// 返回网页URLType
 func PD_RootVCURL(_ type:PD_RootURLType) -> String{
+
     switch type {
     case .home:
-        return String(format: "http://app2.fujin.com/wap/index_wap.htm?f=ios&v=%@&openid=?", PD_GetV())
+        return String(format: "https://ios.wrz3.com/index.htm?f=ios&v=%@",PD_GetV() )
     case .order:
-        return "http://n.fujin.com/android/weibi/buy_list_ios.htm"
+        return "https://ios.wrz3.com/android/weibi/buy_list_ios.htm"
     case .my:
-        return "http://n.fujin.com/android/ios_my.htm"
+        return "https://ios.wrz3.com/mobile/ios_my.htm"
     }
 }
 
@@ -136,7 +137,7 @@ enum PD_TabBarType {
 }
 /// 返回TabBar类型                      ******需要时修改******
 func PD_CurrentTabBarType() -> PD_TabBarType {
-    return .second_Top
+    return .first_Bottom
 }
 
 /// TabBar高度

@@ -30,7 +30,6 @@ class IAPHelper: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserv
     func buyProductIdentifier(_ product: SKProduct) {
         let payment: SKPayment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
-        
     }
     
     
@@ -39,7 +38,6 @@ class IAPHelper: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserv
             self.getProductsSuccessBlock!(response.products)
         }
     }
-    
     
     
     func purchasedTranscation(_ transaction: SKPaymentTransaction){
@@ -74,12 +72,15 @@ class IAPHelper: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserv
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased :
+                print("purchased")
                 self.purchasedTranscation(transaction)
             case .failed :
+                print("failed")
                 self.failedTransaction(transaction)
             case .purchasing :
                 print("Purchasing")
             default:
+                print("default")
                 self.otherTransAction(transaction)
             }
         }

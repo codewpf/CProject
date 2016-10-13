@@ -12,7 +12,7 @@ import SnapKit
 import SVProgressHUD
 import JavaScriptCore
 
-class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
+class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, URLSessionDelegate{
     
     // MARK: - Property
     var jsContext: JSContext? = nil
@@ -21,6 +21,9 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
     var webView: UIWebView? = nil
     var progressView: NJKWebViewProgressView? = nil
     var progressProxy: NJKWebViewProgress? = nil
+    
+
+    
     
     // MARK: - Methods -
     init(_ webUrl: String) {
@@ -72,7 +75,6 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
         
         let request: URLRequest = URLRequest(url: URL(string: self.webUrl!)!)
         self.webView?.loadRequest(request)
-        
         
         //self.loadRequest(url: self.webUrl!)
     }
@@ -200,7 +202,11 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
                 DispatchQueue.main.async {
                     let alert: UIAlertController = UIAlertController.init(title: "提醒", message: "检测未安装微信，是前往AppStore下载？", preferredStyle: .alert)
                     alert.addAction(UIAlertAction.init(title: "安装", style: .default, handler: { (action) in
-                        UIApplication.shared.open(URL(string: WXApi.getWXAppInstallUrl())!, options: [:], completionHandler: nil)
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(URL(string: WXApi.getWXAppInstallUrl())!, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(URL(string: WXApi.getWXAppInstallUrl())!)
+                        }
                     }))
                     alert.addAction(UIAlertAction.init(title: "下次", style: .cancel, handler: nil))
                     UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
@@ -272,9 +278,42 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
     
     
     
+//    //MARK: - 处理UIWebView不信任证书问题
+//    var authenticated = false
+//    
+//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        if self.authenticated == false {
+//            let urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
+//            let task: URLSessionDataTask =  urlSession.dataTask(with: request, completionHandler: { (data, response, error) in
+//                
+//                
+//                
+//                print(data,response,error)
+//                if error == nil {
+//                    if self.authenticated == false{
+//                        self.authenticated = true
+//                        let pageData :String = String(data: data!, encoding: .utf8)!
+//                        self.webView?.loadHTMLString(pageData, baseURL: request.url!)
+//                    } else {
+//                        self.webView?.loadRequest(request)
+//                    }
+//                }
+//            })
+//            task.resume()
+//            return false
+//        }
+//        
+//        return true
+//    }
+//    
+//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+//        completionHandler(.useCredential,URLCredential(trust: challenge.protectionSpace.serverTrust!))
+//    }
     
     
     
+    
+    //MARK: - Other
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
