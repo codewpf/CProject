@@ -83,6 +83,7 @@ class AppStoreListVC: RootViewController, UITableViewDelegate, UITableViewDataSo
                     if let code: NSNumber = result.object(forKey: "code") as? NSNumber {
                         if code == NSNumber(value: 1) {
                             SVProgressHUD.showSuccess(withStatus: "充值成功！")
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Pay_Success"), object: nil);
                             self.backAction()
                         } else {
                             let msg: String? = result.object(forKey: "msg") as? String

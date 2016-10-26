@@ -17,13 +17,13 @@ import JavaScriptCore
     func getBeta() -> String
     
     /// 跳转网页
-    func gotoUrl(url: String)
+    func gotoUrl(_ url: String)
     
     /// 跳转网页
-    func openUrl(url: String)
+    func openUrl(_ url: String)
     
     /// 显示提醒
-    func showMsg(msg: String)
+    func showMsg(_ msg: String)
     
     /// 虚拟币不够，跳转到苹果支付
     func phonepay(_ productsID: String)
@@ -77,14 +77,14 @@ class JSModel: NSObject , JSModelExports{
     }
     
     /// 跳转网页
-    func gotoUrl(url: String) {
+    func gotoUrl(_ url: String) {
         if self.guBlock != nil {
             self.guBlock!(url)
         }
     }
     
     /// 跳转网页
-    func openUrl(url: String) {
+    func openUrl(_ url: String) {
         if self.opBlock != nil {
             self.opBlock!(url)
         }
@@ -92,7 +92,7 @@ class JSModel: NSObject , JSModelExports{
     
     
     /// 显示提醒
-    func showMsg(msg: String) {
+    func showMsg(_ msg: String) {
         DispatchQueue.main.async {
             let alert: UIAlertController = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好的", style: .cancel, handler: nil))

@@ -96,7 +96,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, 
     
     /// 如果当前是订单页面 收到通知进行刷新
     func resultRefresh() {
-        if self.webView != nil && self.webUrl == PD_RootVCURL(.order) {
+        if self.webView != nil && self.webUrl != PD_RootVCURL(.home) {
             self.webView?.reload()
         }
     }

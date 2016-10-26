@@ -24,6 +24,7 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate, UINavig
         super.viewDidAppear(animated)
         
         if self.isRoot() == false &&
+            self.navigationController != nil &&
             self.navigationController!.interactivePopGestureRecognizer != nil &&
             self.navigationController!.viewControllers.count > 1{
             self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -35,9 +36,11 @@ class RootViewController: UIViewController, UIGestureRecognizerDelegate, UINavig
         super.viewDidDisappear(animated)
         
         if self.isRoot() == true &&
+            self.navigationController != nil &&
             self.navigationController!.interactivePopGestureRecognizer != nil {
             self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         }
+        
         
     }
     
