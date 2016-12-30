@@ -10,13 +10,6 @@
 		E314F86A1D93736600019BB5 /* WTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E314F8691D93736600019BB5 /* WTabBarController.swift */; };
 		E314F8711D94CF3C00019BB5 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E314F86E1D94CF3C00019BB5 /* NJKWebViewProgress.m */; };
 		E314F8721D94CF3C00019BB5 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E314F8701D94CF3C00019BB5 /* NJKWebViewProgressView.m */; };
-		E38A71721DACE4BA0008495B /* CacheStoragePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A71681DACE4BA0008495B /* CacheStoragePolicy.m */; };
-		E38A71731DACE4BA0008495B /* CanonicalRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A716A1DACE4BA0008495B /* CanonicalRequest.m */; };
-		E38A71741DACE4BA0008495B /* CredentialsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A716C1DACE4BA0008495B /* CredentialsManager.m */; };
-		E38A71751DACE4BA0008495B /* CustomHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A716E1DACE4BA0008495B /* CustomHTTPProtocol.m */; };
-		E38A71761DACE4BA0008495B /* key.der in Resources */ = {isa = PBXBuildFile; fileRef = E38A716F1DACE4BA0008495B /* key.der */; };
-		E38A71771DACE4BA0008495B /* QNSURLSessionDemux.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A71711DACE4BA0008495B /* QNSURLSessionDemux.m */; };
-		E3AA69C71DAF2C980032BA64 /* Readme.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3AA69C61DAF2C980032BA64 /* Readme.strings */; };
 		E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084611D8FF4230089EC43 /* AppDelegate.swift */; };
 		E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C084631D8FF4230089EC43 /* ViewController.swift */; };
 		E3C084671D8FF4230089EC43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C084651D8FF4230089EC43 /* Main.storyboard */; };
@@ -119,18 +112,6 @@
 		E314F86F1D94CF3C00019BB5 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
 		E314F8701D94CF3C00019BB5 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		E3402C1A1DAA192A00A6CCCE /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
-		E38A71671DACE4BA0008495B /* CacheStoragePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheStoragePolicy.h; sourceTree = "<group>"; };
-		E38A71681DACE4BA0008495B /* CacheStoragePolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheStoragePolicy.m; sourceTree = "<group>"; };
-		E38A71691DACE4BA0008495B /* CanonicalRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanonicalRequest.h; sourceTree = "<group>"; };
-		E38A716A1DACE4BA0008495B /* CanonicalRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanonicalRequest.m; sourceTree = "<group>"; };
-		E38A716B1DACE4BA0008495B /* CredentialsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialsManager.h; sourceTree = "<group>"; };
-		E38A716C1DACE4BA0008495B /* CredentialsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialsManager.m; sourceTree = "<group>"; };
-		E38A716D1DACE4BA0008495B /* CustomHTTPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHTTPProtocol.h; sourceTree = "<group>"; };
-		E38A716E1DACE4BA0008495B /* CustomHTTPProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHTTPProtocol.m; sourceTree = "<group>"; };
-		E38A716F1DACE4BA0008495B /* key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = key.der; sourceTree = "<group>"; };
-		E38A71701DACE4BA0008495B /* QNSURLSessionDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNSURLSessionDemux.h; sourceTree = "<group>"; };
-		E38A71711DACE4BA0008495B /* QNSURLSessionDemux.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNSURLSessionDemux.m; sourceTree = "<group>"; };
-		E3AA69C61DAF2C980032BA64 /* Readme.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Readme.strings; sourceTree = "<group>"; };
 		E3C0845E1D8FF4230089EC43 /* CProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C084611D8FF4230089EC43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3C084631D8FF4230089EC43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -365,29 +346,9 @@
 			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
-		E38A71661DACE4BA0008495B /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				E38A71671DACE4BA0008495B /* CacheStoragePolicy.h */,
-				E38A71681DACE4BA0008495B /* CacheStoragePolicy.m */,
-				E38A71691DACE4BA0008495B /* CanonicalRequest.h */,
-				E38A716A1DACE4BA0008495B /* CanonicalRequest.m */,
-				E38A716B1DACE4BA0008495B /* CredentialsManager.h */,
-				E38A716C1DACE4BA0008495B /* CredentialsManager.m */,
-				E38A716D1DACE4BA0008495B /* CustomHTTPProtocol.h */,
-				E38A716E1DACE4BA0008495B /* CustomHTTPProtocol.m */,
-				E38A716F1DACE4BA0008495B /* key.der */,
-				E38A71701DACE4BA0008495B /* QNSURLSessionDemux.h */,
-				E38A71711DACE4BA0008495B /* QNSURLSessionDemux.m */,
-				E3AA69C61DAF2C980032BA64 /* Readme.strings */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		E3C084551D8FF4230089EC43 = {
 			isa = PBXGroup;
 			children = (
-				E38A71661DACE4BA0008495B /* Protocol */,
 				E3C084601D8FF4230089EC43 /* CProject */,
 				E3D317171D927A46002ECA59 /* MVVM */,
 				E3C084A31D9033470089EC43 /* Tools */,
@@ -746,7 +707,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = alex;
 				TargetAttributes = {
 					E3C0845D1D8FF4230089EC43 = {
@@ -799,9 +760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E38A71761DACE4BA0008495B /* key.der in Resources */,
 				E3C0846C1D8FF4230089EC43 /* LaunchScreen.storyboard in Resources */,
-				E3AA69C71DAF2C980032BA64 /* Readme.strings in Resources */,
 				E3C084691D8FF4230089EC43 /* Assets.xcassets in Resources */,
 				E3D85AD71D9657D3002DF00D /* AlipaySDK.bundle in Resources */,
 				E3C084671D8FF4230089EC43 /* Main.storyboard in Resources */,
@@ -850,21 +809,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D85AE11D9657D3002DF00D /* openssl_wrapper.m in Sources */,
-				E38A71721DACE4BA0008495B /* CacheStoragePolicy.m in Sources */,
 				E3D3170C1D915D9B002ECA59 /* KeychainPasswordItem.swift in Sources */,
 				E3D317111D922BAF002ECA59 /* NetWorkHelper.swift in Sources */,
 				E3D85B131D966BDE002DF00D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				E3D85AE01D9657D3002DF00D /* NSDataEx.m in Sources */,
 				E3C084641D8FF4230089EC43 /* ViewController.swift in Sources */,
-				E38A71741DACE4BA0008495B /* CredentialsManager.m in Sources */,
 				E3D3170F1D9178C7002ECA59 /* RootViewController.swift in Sources */,
 				E314F8711D94CF3C00019BB5 /* NJKWebViewProgress.m in Sources */,
 				E3D317161D926EE9002ECA59 /* IAPHelper.swift in Sources */,
 				E3D85B121D966BDE002DF00D /* WechatHelper.m in Sources */,
 				E3C084A51D903A5E0089EC43 /* WPFKeychain.swift in Sources */,
-				E38A71731DACE4BA0008495B /* CanonicalRequest.m in Sources */,
 				E314F8721D94CF3C00019BB5 /* NJKWebViewProgressView.m in Sources */,
-				E38A71771DACE4BA0008495B /* QNSURLSessionDemux.m in Sources */,
 				E3D85B181D966BDE002DF00D /* WXMediaMessage+messageConstruct.m in Sources */,
 				E3D85B141D966BDE002DF00D /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
 				E3C084621D8FF4230089EC43 /* AppDelegate.swift in Sources */,
@@ -882,7 +837,6 @@
 				E3D317141D926733002ECA59 /* JSModel.swift in Sources */,
 				E3D85ADB1D9657D3002DF00D /* Order.m in Sources */,
 				E3D85ADD1D9657D3002DF00D /* DataSigner.m in Sources */,
-				E38A71751DACE4BA0008495B /* CustomHTTPProtocol.m in Sources */,
 				E3C084A71D903AC00089EC43 /* PDefine.swift in Sources */,
 				E3D85ADC1D9657D3002DF00D /* base64.m in Sources */,
 				E3D85ADE1D9657D3002DF00D /* DataVerifier.m in Sources */,
@@ -958,6 +912,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1008,6 +963,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -47,6 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initRoot() {
         self.tabConfig = WTabBarController()
         self.window?.rootViewController = self.tabConfig
+        
+        let homeVC: WebVC = WebVC(PD_RootVCURL(.home))
+        let homeNav: UINavigationController = UINavigationController(rootViewController: homeVC)
+        self.window?.rootViewController = homeNav
     }
     
     func reQuest() -> Void {

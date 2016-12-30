@@ -275,41 +275,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, 
         }
     }
     
-    
-    
-    
-//    //MARK: - 处理UIWebView不信任证书问题
-//    var authenticated = false
-//    
-//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        if self.authenticated == false {
-//            let urlSession: URLSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
-//            let task: URLSessionDataTask =  urlSession.dataTask(with: request, completionHandler: { (data, response, error) in
-//                
-//                
-//                
-//                print(data,response,error)
-//                if error == nil {
-//                    if self.authenticated == false{
-//                        self.authenticated = true
-//                        let pageData :String = String(data: data!, encoding: .utf8)!
-//                        self.webView?.loadHTMLString(pageData, baseURL: request.url!)
-//                    } else {
-//                        self.webView?.loadRequest(request)
-//                    }
-//                }
-//            })
-//            task.resume()
-//            return false
-//        }
-//        
-//        return true
-//    }
-//    
-//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        completionHandler(.useCredential,URLCredential(trust: challenge.protectionSpace.serverTrust!))
-//    }
-    
+
     
     
     

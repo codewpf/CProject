@@ -88,12 +88,12 @@ func PD_UserReceiptKey() -> String {
 
 /// 服务器地址
 func PD_ServerURL() -> String {
-    return "https://ios.wrz3.com/ashx/AppleManage.ashx"
+    return ""
 }
 
 /// md5混淆key值
 func PD_MD5Key() -> String {
-    return "123456abcapple_is_not_good"
+    return ""
 }
 
 /// 收据验证URL地址类型
@@ -108,7 +108,7 @@ func PD_ReceiptURLType() -> String {
 
 // 网页V值
 func PD_GetV() -> String {
-    return "12112"
+    return ""
 }
 
 /// 返回网页URLType
@@ -120,11 +120,11 @@ func PD_RootVCURL(_ type:PD_RootURLType) -> String{
 
     switch type {
     case .home:
-        return String(format: "https://ios.wrz3.com/index.htm?f=ios&v=%@",PD_GetV() )
+        return String(format: "",PD_GetV() )
     case .order:
-        return "https://ios.wrz3.com/android/weibi/buy_list_ios.htm"
+        return ""
     case .my:
-        return "https://ios.wrz3.com/mobile/ios_my.htm"
+        return ""
     }
 }
 
