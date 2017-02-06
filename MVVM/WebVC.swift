@@ -22,7 +22,7 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, 
     var progressView: NJKWebViewProgressView? = nil
     var progressProxy: NJKWebViewProgress? = nil
     
-
+    var homeTitle: String? = nil
     
     
     // MARK: - Methods -
@@ -43,6 +43,11 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let title = homeTitle {
+            self.navigationController?.navigationItem.title = title
+        }
+        
         // Do any additional setup after loading the view.
         self.createBarButtonItem("刷新", self, #selector(self.refresh), .NavBtn_Right, "123", "123")
         
@@ -165,7 +170,11 @@ class WebVC: RootViewController, UIWebViewDelegate, NJKWebViewProgressDelegate, 
     // MARK: - UIWebViewDelegate
     func webViewProgress(_ webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
         self.progressView?.setProgress(progress, animated: true)
-        self.navigationItem.title = self.webView?.stringByEvaluatingJavaScript(from: "document.title")
+        
+        guard self.homeTitle == nil else {
+            return
+        }
+        self.navigationController?.navigationItem.title = self.webView?.stringByEvaluatingJavaScript(from: "document.title")
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

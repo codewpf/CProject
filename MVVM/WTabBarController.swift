@@ -25,6 +25,7 @@ class WTabBarController: UITabBarController {
         
         
         let homeVC: WebVC = WebVC(PD_RootVCURL(.home))
+        homeVC.homeTitle = "要改的标题"
         let homeNav: UINavigationController = UINavigationController(rootViewController: homeVC)
         
         let orderVC: WebVC = WebVC(PD_RootVCURL(.order))
